@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <groupId>guru.springframework</groupId>
+    <artifactId>sfg-pet-clinic</artifactId>
+    <version>1.1-SNAPSHOT</version>
+    <name>sfg-pet-clinic</name>
+    <description>SFG pet clinic project</description>
+
     <packaging>pom</packaging>
     <modules>
         <module>pet-clinic-data</module>
@@ -12,22 +19,11 @@
         <version>2.2.9.RELEASE</version>
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
-    <groupId>guru.springframework</groupId>
-    <artifactId>sfg-pet-clinic</artifactId>
-    <version>1.1-SNAPSHOT</version>
-    <name>sfg-pet-clinic</name>
-    <description>SFG pet clinic project</description>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>11</java.version>
-        <jaxb.version>2.3.0</jaxb.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <java.version>1.8</java.version>
         <start-class>sfg-pet-clinic</start-class>
 
-            <maven.javadoc.skip>true</maven.javadoc.skip>
 
 
     </properties>
@@ -43,10 +39,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-
+<version>2.5.3</version>
                 <configuration>
                     <goal>install</goal>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
 
 
                 </configuration>
