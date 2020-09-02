@@ -4,7 +4,7 @@
 
     <groupId>guru.springframework</groupId>
     <artifactId>sfg-pet-clinic</artifactId>
-    <version>1.4-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sfg-pet-clinic</name>
     <description>SFG pet clinic project</description>
 
@@ -43,6 +43,7 @@
                 <configuration>
                     <goal>install</goal>
 
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
 
 
                 </configuration>
