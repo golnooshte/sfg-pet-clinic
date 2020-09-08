@@ -36,14 +36,14 @@ private  final VetService vetService;
 
         vet vet1=new vet();
         vet1.setId(1L);
-        vet1.setFirstName("goofi");
-        vet1.setLastName("irooni");
+        vet1.setFirstName("misha");
+        vet1.setLastName("rohani");
         this.vetService.save(vet1);
 
         vet vet2=new vet();
-        vet1.setId(2L);
-        vet1.setFirstName("dori");
-        vet1.setLastName("karazmoode");
+        vet2.setId(2L);
+        vet2.setFirstName("maryam");
+        vet2.setLastName("asghari");
         this.vetService.save(vet2);
         System.out.println("Loading vets");
     }
