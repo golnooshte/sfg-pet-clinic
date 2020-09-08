@@ -24,14 +24,15 @@ private  final VetService vetService;
      owner1.setId(1L);
      owner1.setFirstName("Goli");
      owner1.setLastName("Teymouri");
-     this.ownerService.save(owner1);
+     ownerService.save(owner1);
+
 
 
         owner owner2= new owner();
-        owner1.setId(2L);
-        owner1.setFirstName("mahdi");
-        owner1.setLastName("Karaz");
-        this.ownerService.save(owner2);
+        owner2.setId(2L);
+        owner2.setFirstName("mahdi");
+        owner2.setLastName("Karaz");
+        ownerService.save(owner2);
 
         vet vet1=new vet();
         vet1.setId(1L);
