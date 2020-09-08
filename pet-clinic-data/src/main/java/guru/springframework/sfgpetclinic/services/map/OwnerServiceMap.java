@@ -25,7 +25,7 @@ public class OwnerServiceMap extends AbstractMapService<owner,Long> implements O
 
     @Override
     public owner save(owner object) {
-        return super.save(object.getId(),object);
+        return super.save(object);
     }
 
     @Override
