@@ -29,13 +29,13 @@ private  final VetService vetService;
 
 
         owner owner2= new owner();
-        owner2.setId(2L);
+
         owner2.setFirstName("mahdi");
         owner2.setLastName("Karaz");
         ownerService.save(owner2);
 
         vet vet1=new vet();
-        vet1.setId(1L);
+
         vet1.setFirstName("misha");
         vet1.setLastName("rohani");
         this.vetService.save(vet1);
