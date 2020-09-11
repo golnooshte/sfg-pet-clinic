@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class owner extends person {
@@ -7,7 +8,7 @@ public class owner extends person {
     private String city;
     private String phone;
 
-    Set<Pet> pets;
+    Set<Pet> pets=new HashSet<>();
 
     public String getAddress() {
         return address;
