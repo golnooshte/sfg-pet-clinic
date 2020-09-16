@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.SpringDataJPA;
+package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.Repository.SpecialityRepository;
 import guru.springframework.sfgpetclinic.model.Speciality;
@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("SpringDataJPA")
+@Profile("springdatajpa")
 public class SpecialityJPAService  implements SpecialitiesService {
     private final SpecialityRepository specialityRepository;
 

@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.SpringDataJPA;
+package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.Repository.VetRepository;
 import guru.springframework.sfgpetclinic.model.vet;
@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 @Service
-@Profile("SpringDataJPA")
+@Profile("springdatajpa")
 public class VetsJPAService  implements VetService {
     private final VetRepository vetRepository;
 

@@ -2,10 +2,13 @@ package guru.springframework.sfgpetclinic.services.map;
 
 import guru.springframework.sfgpetclinic.model.visit;
 import guru.springframework.sfgpetclinic.services.VisitService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 @Service
+@Profile({"default","map"})
+
 public class VisitServiceMap extends AbstractMapService<visit,Long> implements VisitService {
     @Override
     public Set<visit> findAll() {
@@ -23,10 +26,10 @@ public class VisitServiceMap extends AbstractMapService<visit,Long> implements V
                 visit.getPet().getId() == null || visit.getPet() == null) {
             throw new RuntimeException("visit has not been found");
 
-        } else {
+        }
 
             return super.save(visit);
-        }
+
     }
     @Override
     public void deleteById(Long id) {

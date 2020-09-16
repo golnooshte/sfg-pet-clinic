@@ -63,6 +63,7 @@ public class LoadData implements CommandLineRunner{
 visit dogvisit=new visit();
 dogvisit.setPet(pet1);
 dogvisit.setDescription("sneezy dog");
+dogvisit.setDate(LocalDate.now());
 visitService.save(dogvisit);
 
         owner owner2= new owner();

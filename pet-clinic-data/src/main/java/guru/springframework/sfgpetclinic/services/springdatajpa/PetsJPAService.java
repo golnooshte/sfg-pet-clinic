@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.SpringDataJPA;
+package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.Repository.PetRepository;
 import guru.springframework.sfgpetclinic.model.Pet;
@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("SpringDataJPA")
+@Profile("springdatajpa")
 public class PetsJPAService implements PetServices {
     private final PetRepository petRepository;
 
@@ -22,6 +22,8 @@ public class PetsJPAService implements PetServices {
     public Set<Pet> findAll() {
         Set<Pet> pets=new HashSet<>();
         petRepository.findAll().iterator().forEachRemaining(pets::add);
+
+
         return pets;    }
 
     @Override

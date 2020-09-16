@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.SpringDataJPA;
+package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.Repository.OwnerRepository;
 import guru.springframework.sfgpetclinic.Repository.PetRepository;
@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 @Service
-@Profile("SpringDataJPA")
+@Profile("springdatajpa")
 public class OwnersJPAservice
         implements OwnerService {
     private final OwnerRepository ownerRepository;
@@ -36,6 +36,7 @@ public class OwnersJPAservice
         Set<owner> ownerSet=new HashSet<>();
 
                 ownerRepository.findAll().iterator().forEachRemaining(ownerSet::add);
+
                 return ownerSet;
     }
 
@@ -50,6 +51,7 @@ public class OwnersJPAservice
     }
     @Override
     public owner save(owner object) {
+
         return ownerRepository.save(object);
     }
 

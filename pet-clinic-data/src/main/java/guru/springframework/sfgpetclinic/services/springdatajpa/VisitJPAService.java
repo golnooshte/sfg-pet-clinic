@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic.services.SpringDataJPA;
+package guru.springframework.sfgpetclinic.services.springdatajpa;
 
 import guru.springframework.sfgpetclinic.Repository.VisitRepository;
 import guru.springframework.sfgpetclinic.model.visit;
@@ -10,11 +10,12 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-@Profile("SpringDataJPA")
+@Profile("springdatajpa")
 public class VisitJPAService implements VisitService {
     private final VisitRepository visitRepository;
 
     public VisitJPAService(VisitRepository visitRepository) {
+
         this.visitRepository = visitRepository;
     }
 
@@ -27,6 +28,7 @@ public class VisitJPAService implements VisitService {
 
     @Override
     public visit findById(Long aLong) {
+
         return visitRepository.findById(aLong).orElse(null);
     }
 

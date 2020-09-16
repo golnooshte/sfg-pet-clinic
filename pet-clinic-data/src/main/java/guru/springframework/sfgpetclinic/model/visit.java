@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class visit extends BaseEntity{
     @Column(name="Date")
     private LocalDate date;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="pet_id")
     private Pet pet;
     @Column(name="description")
