@@ -2,6 +2,9 @@ package guru.springframework.sfgpetclinic.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "pets")
 public class Pet extends BaseEntity {
@@ -16,6 +19,16 @@ public class Pet extends BaseEntity {
     private owner owner;
     @Column(name="name")
     private String name;
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
+    private Set<visit> visits=new HashSet<>();
+
+    public Set<visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<visit> visits) {
+        this.visits = visits;
+    }
 
     public String getName() {
         return name;
