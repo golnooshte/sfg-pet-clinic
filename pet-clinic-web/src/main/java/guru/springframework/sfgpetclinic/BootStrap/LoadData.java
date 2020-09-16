@@ -1,10 +1,7 @@
 package guru.springframework.sfgpetclinic.BootStrap;
 
 import guru.springframework.sfgpetclinic.model.*;
-import guru.springframework.sfgpetclinic.services.OwnerService;
-import guru.springframework.sfgpetclinic.services.PetTypeService;
-import guru.springframework.sfgpetclinic.services.SpecialitiesService;
-import guru.springframework.sfgpetclinic.services.VetService;
+import guru.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class LoadData implements CommandLineRunner{
     private  final VetService vetService;
     private final PetTypeService petTypeServices;
     private final SpecialitiesService specialitiesService;
+    private final VisitService visitService;
 
-    public LoadData(OwnerService ownerService, VetService vetService, PetTypeService PetTypeService, SpecialitiesService specialitiesService) {
+    public LoadData(OwnerService ownerService, VetService vetService, PetTypeService PetTypeService, SpecialitiesService specialitiesService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeServices = PetTypeService;
         this.specialitiesService = specialitiesService;
+        this.visitService = visitService;
     }
     @Override
     public void run(String... args) throws Exception {
@@ -61,7 +60,10 @@ public class LoadData implements CommandLineRunner{
 
 
         ownerService.save(owner1);
-
+visit dogvisit=new visit();
+dogvisit.setPet(pet1);
+dogvisit.setDescription("sneezy dog");
+visitService.save(dogvisit);
 
         owner owner2= new owner();
         owner2.setFirstName("mahdi");
