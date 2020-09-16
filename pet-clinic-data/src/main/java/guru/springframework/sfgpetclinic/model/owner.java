@@ -1,13 +1,20 @@
 package guru.springframework.sfgpetclinic.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
+@Table(name="owners")
 public class owner extends person {
-    private String address;
-    private String city;
-    private String phone;
 
+    @Column(name = "address")
+    private String address;
+    @Column(name = "city")
+    private String city;
+    @Column(name = "phone")
+    private String phone;
+@OneToMany(cascade = CascadeType.ALL,mappedBy = "owner")
     Set<Pet> pets=new HashSet<>();
 
     public String getAddress() {
