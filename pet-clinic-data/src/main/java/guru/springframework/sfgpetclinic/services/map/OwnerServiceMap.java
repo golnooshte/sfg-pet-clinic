@@ -8,6 +8,8 @@ import guru.springframework.sfgpetclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 @Service
 @Profile({"default","map"})
@@ -72,5 +74,12 @@ super.deleteById(id);
     @Override
     public void delete(owner object) {
 super.delete(object);
+    }
+
+    @Override
+    public List<owner> findAllByLastNameLike(String s) {
+        List<owner> owners=new ArrayList<>();
+
+        return null;
     }
 }
