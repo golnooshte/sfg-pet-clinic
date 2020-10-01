@@ -107,5 +107,31 @@ visitService.save(dogvisit);
         this.vetService.save(vet2);
 
         System.out.println("Loading vets");
+
+
+
+        owner owner3= new owner();
+        owner3.setId(3L);
+        owner3.setFirstName("Parsa");
+        owner3.setLastName("Teymouri");
+        owner3.setAddress("Kesklinn 10151");
+        owner3.setCity("Tehran");
+        owner3.setPhone("22618976");
+
+        Pet pet3=new Pet();
+        pet3.setName("goofy");
+        pet3.setBirthday(LocalDate.now());
+        pet3.setOwner(owner3);
+        pet3.setPetType(dogsave);
+
+        owner3.getPets().add(pet3);
+
+
+        ownerService.save(owner3);
+        visit dogvisit3=new visit();
+        dogvisit3.setPet(pet3);
+        dogvisit3.setDescription("sneezy dog");
+        dogvisit3.setDate(LocalDate.now());
+        visitService.save(dogvisit);
     }
 }
