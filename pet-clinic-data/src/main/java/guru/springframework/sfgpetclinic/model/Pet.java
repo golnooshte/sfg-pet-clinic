@@ -1,6 +1,7 @@
 package guru.springframework.sfgpetclinic.model;
 
 import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -21,7 +22,7 @@ public class Pet extends BaseEntity {
         this.owner = owner;
         this.birthday = birthday;
 
-        if (visits == null || visits.size() > 0 ) {
+        if (visits != null || visits.size() > 0 ) {
             this.visits = visits;
         }
     }
@@ -32,6 +33,8 @@ public class Pet extends BaseEntity {
 
     private PetType petType;
     @Column(name = "birth_day")
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+
     private LocalDate birthday;
     @ManyToOne
     @JoinColumn(name="owner_id")
