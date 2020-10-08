@@ -97,4 +97,15 @@ class OwnerControllerTest {
                 .andExpect(model().attribute("owner",
                         hasProperty("id",is(1L))));
     }
+
+    @Test
+    void EmptyLastName() throws Exception {
+        when(ownerService.findAllByLastNameLike(anyString())).thenReturn(Arrays.asList(
+                owner.builder().id(1L).build(),owner.builder().id(2L).build()));
+        mockMvc.perform(get("/owners").
+                param("lastName","")).
+                andExpect(status().isOk()).
+                andExpect(view().name("owners/ownersList"))
+                .andExpect(model().attribute("selections",hasSize(2)));
+    }
 }
