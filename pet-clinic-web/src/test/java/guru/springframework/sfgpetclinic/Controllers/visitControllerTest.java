@@ -71,7 +71,7 @@ class visitControllerTest {
     }
 
     @Test
-    void visitProcess() throws Exception {
+    void visitProcess()  throws Exception {
         mvc.perform(post("/owners/1/pets/1/visits/new").
                 contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("date","2018-11-11")

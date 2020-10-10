@@ -33,7 +33,7 @@ public class Pet extends BaseEntity {
 
     private PetType petType;
     @Column(name = "birth_day")
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
 
     private LocalDate birthday;
     @ManyToOne
